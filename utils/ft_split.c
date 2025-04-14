@@ -6,13 +6,13 @@
 /*   By: luevange <luevange@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 11:50:43 by luevange          #+#    #+#             */
-/*   Updated: 2024/12/27 18:19:06 by luevange         ###   ########.fr       */
+/*   Updated: 2025/04/14 14:28:08 by luevange         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../pipex.h"
 
-int	count_word(char const *str, char c)
+static int	count_word(char const *str, char c)
 {
 	int	i;
 	int	count;
@@ -33,7 +33,7 @@ int	count_word(char const *str, char c)
 	return (count);
 }
 
-int	charcount(char const *str, char c, int i)
+static int	charcount(char const *str, char c, int i)
 {
 	int	len;
 

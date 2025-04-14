@@ -6,11 +6,11 @@
 /*   By: luevange <luevange@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 17:06:05 by luevange          #+#    #+#             */
-/*   Updated: 2024/12/27 18:19:26 by luevange         ###   ########.fr       */
+/*   Updated: 2025/04/14 14:25:24 by luevange         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../pipex.h"
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {

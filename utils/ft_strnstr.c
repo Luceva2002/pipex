@@ -6,11 +6,11 @@
 /*   By: luevange <luevange@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 18:38:17 by luevange          #+#    #+#             */
-/*   Updated: 2024/12/27 18:19:47 by luevange         ###   ########.fr       */
+/*   Updated: 2025/04/14 14:25:50 by luevange         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../pipex.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {

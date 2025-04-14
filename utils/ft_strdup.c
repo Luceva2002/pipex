@@ -6,11 +6,11 @@
 /*   By: luevange <luevange@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 14:31:28 by luevange          #+#    #+#             */
-/*   Updated: 2024/12/27 18:19:15 by luevange         ###   ########.fr       */
+/*   Updated: 2025/04/14 14:25:33 by luevange         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../pipex.h"
 
 char	*ft_strdup(const char *s)
 {

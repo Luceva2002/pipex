@@ -6,11 +6,11 @@
 /*   By: luevange <luevange@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 16:58:20 by luevange          #+#    #+#             */
-/*   Updated: 2024/12/27 18:19:22 by luevange         ###   ########.fr       */
+/*   Updated: 2025/04/14 14:25:29 by luevange         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../pipex.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
