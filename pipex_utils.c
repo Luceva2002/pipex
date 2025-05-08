@@ -6,7 +6,7 @@
 /*   By: luevange <luevange@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 14:04:08 by luevange          #+#    #+#             */
-/*   Updated: 2025/05/09 00:22:37 by luevange         ###   ########.fr       */
+/*   Updated: 2025/05/09 01:12:40 by luevange         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,13 @@ char	*find_path(char *cmd, char **envp)
 	return (cmd);
 }
 
-static void	create_pipe(int *fd)
+void	create_pipe(int *fd)
 {
 	if (pipe(fd) == -1)
 		error_handler("Pipe");
 }
 
-static void	check_args(int argc)
+void	check_args(int argc)
 {
 	if (argc != 5)
 	{
@@ -60,7 +60,7 @@ static void	check_args(int argc)
 	}
 }
 
-static void	setup_files(int *infile, int *outfile, char **argv)
+void	setup_files(int *infile, int *outfile, char **argv)
 {
 	*infile = open(argv[1], O_RDONLY);
 	if (*infile == -1)

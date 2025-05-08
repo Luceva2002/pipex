@@ -6,13 +6,13 @@
 /*   By: luevange <luevange@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 12:10:50 by luevange          #+#    #+#             */
-/*   Updated: 2025/05/09 00:57:11 by luevange         ###   ########.fr       */
+/*   Updated: 2025/05/09 01:12:18 by luevange         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-static void	handle_child1(int *fd, int infile, char *cmd, char **envp)
+void	handle_child1(int *fd, int infile, char *cmd, char **envp)
 {
 	close(fd[0]);
 	dup2(infile, STDIN_FILENO);
@@ -20,7 +20,7 @@ static void	handle_child1(int *fd, int infile, char *cmd, char **envp)
 	execute_cmd(cmd, envp);
 }
 
-static void	handle_child2(int *fd, int outfile, char *cmd, char **envp)
+void	handle_child2(int *fd, int outfile, char *cmd, char **envp)
 {
 	close(fd[1]);
 	dup2(fd[0], STDIN_FILENO);
@@ -44,7 +44,7 @@ void	execute_cmd(char *cmd, char **envp)
 	}
 }
 
-static void	create_processes(t_pipex *data)
+void	create_processes(t_pipex *data)
 {
 	pid_t	pid1;
 	pid_t	pid2;
