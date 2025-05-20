@@ -6,7 +6,7 @@
 /*   By: luevange <luevange@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 14:04:08 by luevange          #+#    #+#             */
-/*   Updated: 2025/05/09 01:12:40 by luevange         ###   ########.fr       */
+/*   Updated: 2025/05/20 17:48:25 by luevange         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	error_handler(char *str)
 {
 	perror(str);
-	exit(1);
 }
 
 char	*find_path(char *cmd, char **envp)

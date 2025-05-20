@@ -6,7 +6,7 @@
 /*   By: luevange <luevange@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 12:11:02 by luevange          #+#    #+#             */
-/*   Updated: 2025/05/09 00:56:12 by luevange         ###   ########.fr       */
+/*   Updated: 2025/05/20 17:50:20 by luevange         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ size_t		ft_strlen(const char *s1);
 size_t		ft_strlcat(char *dest, const char *src, size_t size);
 size_t		ft_strlcpy(char *dest, const char *src, size_t size);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
+void		ft_free_matrix(char **matrix);
 void		error_handler(char *str);
 char		*find_path(char *cmd, char **envp);
 void		execute_cmd(char *cmd, char **envp);

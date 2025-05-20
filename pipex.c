@@ -6,7 +6,7 @@
 /*   By: luevange <luevange@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 12:10:50 by luevange          #+#    #+#             */
-/*   Updated: 2025/05/09 01:12:18 by luevange         ###   ########.fr       */
+/*   Updated: 2025/05/20 17:54:18 by luevange         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 
 void	handle_child1(int *fd, int infile, char *cmd, char **envp)
 {
+	if (dup2(infile, STDIN_FILENO) == -1)
+	{
+		close(fd[0]);
+		close(fd[1]);
+		exit(1);
+	}	
 	close(fd[0]);
 	dup2(infile, STDIN_FILENO);
 	dup2(fd[1], STDOUT_FILENO);
@@ -40,6 +46,9 @@ void	execute_cmd(char *cmd, char **envp)
 		write(2, "Command not found: ", 18);
 		write(2, cmd_args[0], ft_strlen(cmd_args[0]));
 		write(2, "\n", 1);
+		free(path);
+		ft_free_matrix(cmd_args);
+		free(cmd);
 		exit(127);
 	}
 }
