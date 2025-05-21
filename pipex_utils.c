@@ -6,7 +6,7 @@
 /*   By: luevange <luevange@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 14:04:08 by luevange          #+#    #+#             */
-/*   Updated: 2025/05/20 22:04:37 by luevange         ###   ########.fr       */
+/*   Updated: 2025/05/21 01:07:43 by luevange         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,31 +17,32 @@ void	error_handler(char *str)
 	perror(str);
 }
 
-char *find_path(char *cmd, char **envp)
+char	*find_path(char *cmd, char **envp)
 {
-    char **paths;
-    char *path;
-    char *part_path;
-    int i = 0;
+	char	**paths;
+	char	*path;
+	char	*part_path;
+	int		i;
 
-    if (access(cmd, F_OK) == 0)
-        return (ft_strdup(cmd));
-    while (envp[i] && ft_strnstr(envp[i], "PATH=", 5) == 0)
-        i++;
-    if (!envp[i])
-        return (ft_strdup(cmd));
-    paths = ft_split(envp[i] + 5, ':');
-    i = -1;
-    while (paths[++i])
-    {
-        part_path = ft_strjoin(paths[i], "/");
-        path = ft_strjoin(part_path, cmd);
-        free(part_path);
-        if (access(path, F_OK) == 0)
-            return (ft_free_matrix(paths), path);
-        free(path);
-    }
-    return (ft_free_matrix(paths), ft_strdup(cmd));
+	i = 0;
+	if (access(cmd, F_OK) == 0)
+		return (ft_strdup(cmd));
+	while (envp[i] && ft_strnstr(envp[i], "PATH=", 5) == 0)
+		i++;
+	if (!envp[i])
+		return (ft_strdup(cmd));
+	paths = ft_split(envp[i] + 5, ':');
+	i = -1;
+	while (paths[++i])
+	{
+		part_path = ft_strjoin(paths[i], "/");
+		path = ft_strjoin(part_path, cmd);
+		free(part_path);
+		if (access(path, F_OK) == 0)
+			return (ft_free_matrix(paths), path);
+		free(path);
+	}
+	return (ft_free_matrix(paths), ft_strdup(cmd));
 }
 
 void	create_pipe(int *fd)
